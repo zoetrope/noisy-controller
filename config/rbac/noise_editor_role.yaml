@@ -1,0 +1,31 @@
+# permissions for end users to edit noises.
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRole
+metadata:
+  labels:
+    app.kubernetes.io/name: clusterrole
+    app.kubernetes.io/instance: noise-editor-role
+    app.kubernetes.io/component: rbac
+    app.kubernetes.io/created-by: noisy-controller
+    app.kubernetes.io/part-of: noisy-controller
+    app.kubernetes.io/managed-by: kustomize
+  name: noise-editor-role
+rules:
+- apiGroups:
+  - noisy.zoetrope.github.io
+  resources:
+  - noises
+  verbs:
+  - create
+  - delete
+  - get
+  - list
+  - patch
+  - update
+  - watch
+- apiGroups:
+  - noisy.zoetrope.github.io
+  resources:
+  - noises/status
+  verbs:
+  - get

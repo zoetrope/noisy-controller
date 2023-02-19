@@ -7,4 +7,14 @@ layout:
 - go.kubebuilder.io/v4-alpha
 projectName: noisy-controller
 repo: github.com/zoetrope/noizy-controller
+resources:
+- api:
+    crdVersion: v1
+    namespaced: true
+  controller: true
+  domain: zoetrope.github.io
+  group: noisy
+  kind: Noise
+  path: github.com/zoetrope/noizy-controller/api/v1
+  version: v1
 version: "3"
