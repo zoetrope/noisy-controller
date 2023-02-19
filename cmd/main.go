@@ -49,7 +49,14 @@ func main() {
 
 	ctrl.SetLogger(zap.New(zap.UseFlagOptions(&opts)))
 
-	mgr, err := ctrl.NewManager(ctrl.GetConfigOrDie(), ctrl.Options{
+	restCfg, err := ctrl.GetConfig()
+	if err != nil {
+		setupLog.Error(err, "unable to get config")
+		os.Exit(1)
+	}
+	restCfg.QPS = 50
+	restCfg.Burst = int(restCfg.QPS * 1.5)
+	mgr, err := ctrl.NewManager(restCfg, ctrl.Options{
 		Scheme:                 scheme,
 		MetricsBindAddress:     metricsAddr,
 		Port:                   9443,

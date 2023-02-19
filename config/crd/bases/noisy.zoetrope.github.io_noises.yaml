@@ -35,9 +35,9 @@ spec:
           spec:
             description: NoiseSpec defines the desired state of Noise
             properties:
-              foo:
-                description: Foo is an example field of Noise. Edit noise_types.go
-                  to remove/update
+              count:
+                type: integer
+              interval:
                 type: string
             type: object
           status:
