@@ -1,12 +1,7 @@
 apiVersion: noisy.zoetrope.github.io/v1
 kind: Noise
 metadata:
-  labels:
-    app.kubernetes.io/name: noise
-    app.kubernetes.io/instance: noise-sample
-    app.kubernetes.io/part-of: noisy-controller
-    app.kubernetes.io/managed-by: kustomize
-    app.kubernetes.io/created-by: noisy-controller
   name: noise-sample
 spec:
-  # TODO(user): Add fields here
+  count: 100
+  interval: 3s

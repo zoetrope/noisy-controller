@@ -32,3 +32,7 @@ docker_build_with_restart(
         sync('./bin/manager', '/manager'),
     ]
 )
+
+local_resource(
+    'Sample', 'kubectl apply -f ./config/samples/noisy_v1_noise.yaml',
+    deps=["./config/samples/noisy_v1_noise.yaml"])

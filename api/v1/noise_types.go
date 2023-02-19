@@ -12,8 +12,8 @@ type NoiseSpec struct {
 	// INSERT ADDITIONAL SPEC FIELDS - desired state of cluster
 	// Important: Run "make" to regenerate code after modifying this file
 
-	// Foo is an example field of Noise. Edit noise_types.go to remove/update
-	Foo string `json:"foo,omitempty"`
+	Count    int    `json:"count,omitempty"`
+	Interval string `json:"interval,omitempty"`
 }
 
 // NoiseStatus defines the observed state of Noise
