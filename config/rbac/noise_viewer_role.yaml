@@ -1,0 +1,27 @@
+# permissions for end users to view noises.
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRole
+metadata:
+  labels:
+    app.kubernetes.io/name: clusterrole
+    app.kubernetes.io/instance: noise-viewer-role
+    app.kubernetes.io/component: rbac
+    app.kubernetes.io/created-by: noisy-controller
+    app.kubernetes.io/part-of: noisy-controller
+    app.kubernetes.io/managed-by: kustomize
+  name: noise-viewer-role
+rules:
+- apiGroups:
+  - noisy.zoetrope.github.io
+  resources:
+  - noises
+  verbs:
+  - get
+  - list
+  - watch
+- apiGroups:
+  - noisy.zoetrope.github.io
+  resources:
+  - noises/status
+  verbs:
+  - get

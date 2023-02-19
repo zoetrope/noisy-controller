@@ -1,0 +1,11 @@
+apiVersion: ctlptl.dev/v1alpha1
+kind: Registry
+name: noisy-registry
+port: 35050
+---
+apiVersion: ctlptl.dev/v1alpha1
+kind: Cluster
+name: kind-noisy-dev
+product: kind
+kubernetesVersion: v1.26.0
+registry: noisy-registry

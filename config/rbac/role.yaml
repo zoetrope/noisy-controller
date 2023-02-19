@@ -1,0 +1,33 @@
+---
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRole
+metadata:
+  creationTimestamp: null
+  name: manager-role
+rules:
+- apiGroups:
+  - noisy.zoetrope.github.io
+  resources:
+  - noises
+  verbs:
+  - create
+  - delete
+  - get
+  - list
+  - patch
+  - update
+  - watch
+- apiGroups:
+  - noisy.zoetrope.github.io
+  resources:
+  - noises/finalizers
+  verbs:
+  - update
+- apiGroups:
+  - noisy.zoetrope.github.io
+  resources:
+  - noises/status
+  verbs:
+  - get
+  - patch
+  - update
